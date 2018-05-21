@@ -5,6 +5,7 @@ This project is intended to setup Google Cloud Test Environment and deploy the m
 - Packer 
 - Terraform
 - Deployment 
+
 You need clone this repo in your laptop and operate the following steps in the directory.
 ## Google Cloud
 
