@@ -74,7 +74,7 @@ Download [Terraform](https://www.terraform.io/downloads.html) and move it to you
 
 ### Configure and Run Terraform
 
-Edit the script `./packer/main.tf`, change the `example_poject` to be the project you created by `gclound init` in previous step and save it (it can be checked by `gcloud projects list`).
+Edit the script `./packer/providers.tf`, change the `example_poject` to be the project you created by `gclound init` in previous step and save it (it can be checked by `gcloud projects list`).
  
 Run the following command to initialise Terraform:
 
