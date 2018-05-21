@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "yu-1st-project",
+      "zone": "europe-west1-b",
+      "machine_type": "g1-small",
+      "source_image_family": "ubuntu-1604-lts",
+      "image_name": "news-feed-{{isotime `20060102-150405`}}",
+      "image_family": "news-feed-image",
+      "image_description": "Ubuntu 16.04 with Java preinstalled",
+      "ssh_username": "developer"
+    }
+  ],
+  "provisioners": [
+      {
+          "type": "shell",
+          "script": "{{template_dir}}/../scripts/image-config-newsfeed.sh",
+          "execute_command": "sudo {{.Path}}"
+      }
+  ]
+}
+

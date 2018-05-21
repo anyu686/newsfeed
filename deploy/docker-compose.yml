@@ -1,0 +1,37 @@
+version: "3"
+services:
+  quote:
+    build: 
+      context: /home/developer/infra-problem/build
+      dockerfile: quoteDockerfile
+    image: quote
+    environment:
+      - APP_PORT=8080
+    ports:
+      - "8080:8080"
+    container_name: quote
+  newsfeed:
+    image: newsfeed
+    build: 
+     context: /home/developer/infra-problem/build
+     dockerfile: newsfeedDockerfile
+    image: newsfeed
+    environment:
+     - APP_PORT=8081
+    ports:
+      - "8081:8081"
+    container_name: newsfeed
+  frontend:
+    build: 
+      context: /home/developer/infra-problem/build
+      dockerfile: frontendDockerfile
+    image: frontend
+    environment:
+      - APP_PORT=9292
+      - QUOTE_SERVICE_URL=http://quote:8080
+      - NEWSFEED_SERVICE_URL=http://newsfeed:8081
+      - NEWSFEED_SERVICE_TOKEN=T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX
+      - STATIC_URL=http://104.199.84.52:9292
+    ports:
+      - "9292:9292"
+    container_name: frontend
