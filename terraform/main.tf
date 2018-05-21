@@ -16,11 +16,6 @@ resource "google_compute_instance" "newsfeed" {
     access_config {} // use ephemaral public IP
   }
 }
-resource "google_compute_project_metadata" "newsfeed" {
-  metadata {
-    ssh-keys = "developer:${file("~/.ssh/developer.pub")}" // path to ssh key file
-  }
-}
 
 resource "google_compute_firewall" "newsfeed" {
   name    = "allow-tcp-9292"

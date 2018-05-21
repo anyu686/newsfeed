@@ -11,4 +11,4 @@ cd /home/developer/deploy && cp quoteDockerfile $dir
 cp frontendDockerfile $dir
 cp newsfeedDockerfile $dir
 cp docker-compose.yml $dir
-cd $dir && sudo docker-compose up
+cd $dir && sudo docker-compose up -d

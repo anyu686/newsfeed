@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "googlecompute",
-      "project_id": "yu-1st-project",
+      "project_id": "example_project",
       "zone": "europe-west1-b",
       "machine_type": "g1-small",
       "source_image_family": "ubuntu-1604-lts",
